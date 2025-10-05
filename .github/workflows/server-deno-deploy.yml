@@ -28,4 +28,3 @@ jobs:
           project: cuby-bot   
           entrypoint: main.js
           root: Server
-          token: ${{ secrets.DENO_DEPLOY_TOKEN }}
