@@ -25,7 +25,7 @@ jobs:
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: cubybot-backend
+          project: cuby-bot
           entrypoint: main.js
           root: Server
           token: ${{ secrets.DENO_DEPLOY_TOKEN }}

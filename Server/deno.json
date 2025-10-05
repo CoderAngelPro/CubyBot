@@ -37,5 +37,9 @@
       "template"
     ],
     "types": ["vite/client"]
+  },
+  "deploy": {
+    "org": "cuby-studio",
+    "app": "cuby-bot"
   }
 }
