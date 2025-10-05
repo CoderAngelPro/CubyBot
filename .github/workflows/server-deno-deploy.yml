@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: read
-  id-token: write
 
 jobs:
   deploy:
@@ -20,9 +19,9 @@ jobs:
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v2.x
-      - name: Cache npm modules
+      - name: Cache dependencies
         run: deno cache main.js
-      - name: Deploy to Deno Deploy
+      - name: Deploy to Deno Deploy (Classic)
         uses: denoland/deployctl@v1
         with:
           project: cuby-bot
