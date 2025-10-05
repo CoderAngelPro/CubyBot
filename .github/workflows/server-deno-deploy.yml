@@ -1,4 +1,4 @@
-name: Backend Deno Deploy
+name: Backend Deno Deploy (Classic)
 
 on:
   push:
@@ -16,15 +16,32 @@ jobs:
         working-directory: Server
     steps:
       - uses: actions/checkout@v4
+
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v2.x
+
+      - name: Validate deploy token is present
+        env:
+          DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}
+        run: |
+          if [ -z "$DENO_DEPLOY_TOKEN" ]; then
+            echo "ERROR: Missing DENO_DEPLOY_TOKEN repository secret. Add it in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+
       - name: Cache dependencies
         run: deno cache main.js
+
       - name: Deploy to Deno Deploy (Classic)
         uses: denoland/deployctl@v1
+        env:
+          # Provide as env too, in case the action relies on it
+          DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}
         with:
-          project: cuby-bot
+          # Use your Classic Deploy Project name (NOT an EA app slug)
+          project: YOUR_CLASSIC_PROJECT_NAME
           entrypoint: main.js
           root: Server
+          # Ensure this resolves to a non-empty value
           token: ${{ secrets.DENO_DEPLOY_TOKEN }}
