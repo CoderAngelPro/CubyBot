@@ -28,5 +28,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: cuby-bot   
-          entrypoint: main.js
+          entrypoint: _fresh/server.js
           root: Server
