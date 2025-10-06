@@ -2,5 +2,5 @@ import { defineConfig } from "vite";
 import { fresh } from "@fresh/plugin-vite";
 
 export default defineConfig({
-  plugins: [fresh({serverEntry: "./main.js"})],
+  plugins: [fresh({ serverEntry: "./main.js" })],
 });
