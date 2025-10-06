@@ -22,7 +22,9 @@ jobs:
           deno-version: v2.x
       - name: Cache npm modules
         run: deno cache main.js
-      - name: Deploy to Deno Deploy 
+      - name: Build Fresh app
+        run: deno task build
+      - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: cuby-bot   
