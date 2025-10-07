@@ -31,16 +31,7 @@ npm run build
 # Output goes to dist/
 ```
 
-### Deploy to GitHub Pages
-1) Ensure your repository is named `<username>.github.io` (this project’s repo is `CoderAngelPro.github.io`).
-2) Commit and push the built `dist/` to the Pages branch used by your setup (often the `main` branch root for user/organization sites, or configure Pages to use `/docs` or a `gh-pages` branch via CI).
-3) Set the site URL to `https://CoderAngelPro.github.io/CubyBot` if this is a subpath app.
-
 Tip: For subpath deployments, make sure your router and asset references respect the base path if needed.
-
-### Static assets: `public/` vs `src/assets`
- - Put files you reference directly in HTML (e.g., favicons) into `public/`. They’re copied as-is and served with stable URLs like `/vite.svg`.
- - Put assets you import in code into `src/assets` to get bundler optimizations and cache-busting hashed filenames.
 
 ### Backend CORS
 Your backend must allow the Pages origin(s). In CubyBot Server, CORS is already configured for:
