@@ -1,18 +1,22 @@
 {
   "nodeModulesDir": "none",
   "tasks": {
-    "build": "deno task check",
+    "build": "deno run -A jsr:@fresh/core@^2.2.0/dev build main.jsx",
     "check": "deno fmt --check . && deno lint . && deno check",
     "dev": "deno serve -A --watch main.jsx",
-    "start": "deno serve -A main.jsx",
+    "start": "deno serve -A _fresh/server.js",
     "update": "deno run -A -r jsr:@fresh/update ."
   },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
   "exclude": ["**/_fresh/*"],
   "imports": {
-    "fresh": "jsr:@fresh/core@^2.2.0"
+    "fresh": "jsr:@fresh/core@^2.2.0",
+    "preact": "npm:preact@^10.28.2",
+    "preact/jsx-runtime": "npm:preact@^10.28.2/jsx-runtime"
   },
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
     "lib": ["dom", "dom.asynciterable", "dom.iterable", "deno.ns"]
   }
 }
