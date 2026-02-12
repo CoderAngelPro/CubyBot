@@ -1,0 +1,77 @@
+#prompt-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-self: center;
+}
+
+#prompt {
+  position: relative;
+  width: 75vw;
+  max-width: 800px;
+  min-width: 480px;
+  height: clamp(100px, 20vh, 150px);
+  border-radius: 25px;
+  background-color: var(--bg-panel);
+  color: var(--text-light);
+  cursor: text;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+
+textarea {
+  position: absolute;
+  inset: 0;
+  padding: 20px 10px 0 15px;
+  width: 100%;
+  height: 65%;
+  background: transparent;
+  color: var(--text-light);
+  font-size: 1.3rem;
+  line-height: 1;
+  resize: none;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+}
+
+#prompt-text::placeholder { color: #969696; }
+
+#UI {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  place-items: center;
+}
+
+#submit {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+input[type="checkbox"] { 
+  display: none; 
+}
+
+input[type="checkbox"]:checked + label { 
+  background: #00baba; 
+}
+
+label[for="analysis"], label[for="search"] {
+  border: 2px solid gray;
+  padding: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: clamp(1.1rem, 2vh, 1.5rem);
+  user-select: none;
+  white-space: nowrap;
+}
+
+label[for="prompt-text"] { 
+  border: none; 
+}
