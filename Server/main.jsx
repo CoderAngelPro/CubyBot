@@ -7,4 +7,4 @@ export const app = new App();
 app.fsRoutes();
 
 // Export a Deno Deploy-compatible handler
-export default app.handler();
+export default { fetch: app.handler() };
