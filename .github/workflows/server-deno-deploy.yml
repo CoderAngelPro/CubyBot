@@ -20,15 +20,11 @@ jobs:
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v2.x
-      - name: Cache npm modules
-        run: deno cache main.jsx
-      - name: Build Fresh app
-        run: deno task build
-      - name: Verify Fresh entrypoint
-        run: test -f _fresh/server.js
+      - name: Check backend code
+        run: deno task check
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: cuby-bot   
-          entrypoint: _fresh/server.js
+          entrypoint: main.jsx
           root: Server

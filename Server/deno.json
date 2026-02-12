@@ -1,10 +1,9 @@
 {
   "nodeModulesDir": "none",
   "tasks": {
-    "build": "deno run -A build.jsx",
     "check": "deno fmt --check . && deno lint . && deno check",
     "dev": "deno serve -A --watch main.jsx",
-    "start": "deno serve -A _fresh/server.js",
+    "start": "deno serve -A main.jsx",
     "update": "deno run -A -r jsr:@fresh/update ."
   },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
