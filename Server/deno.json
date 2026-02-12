@@ -1,6 +1,7 @@
 {
   "nodeModulesDir": "none",
   "tasks": {
+    "build": "deno task check",
     "check": "deno fmt --check . && deno lint . && deno check",
     "dev": "deno serve -A --watch main.jsx",
     "start": "deno serve -A main.jsx",
