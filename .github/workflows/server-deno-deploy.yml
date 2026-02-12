@@ -32,3 +32,11 @@ jobs:
           project: cuby-bot   
           entrypoint: _fresh/server.js
           root: Server
+          include: |
+            _fresh
+            main.jsx
+            fresh.gen.jsx
+            routes
+            deno.json
+            deno.lock
+          exclude: node_modules
