@@ -20,8 +20,6 @@ jobs:
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v2.x
-      - name: Cache npm modules
-        run: deno cache main.jsx
       - name: Build Fresh app
         run: deno task build
       - name: Verify Fresh entrypoint
