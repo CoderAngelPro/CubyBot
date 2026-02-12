@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: read
-  id-token: write 
+  id-token: write
 
 jobs:
   deploy:
@@ -27,14 +27,11 @@ jobs:
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: cuby-bot   
+          project: cuby-bot
           entrypoint: _fresh/server.js
           root: Server
           include: |
             _fresh
             main.jsx
-            fresh.gen.jsx
             routes
             deno.json
-            deno.lock
-          exclude: node_modules
