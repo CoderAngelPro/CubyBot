@@ -1,7 +1,7 @@
 {
   "nodeModulesDir": "none",
   "tasks": {
-    "build": "deno run -A jsr:@fresh/core@^2.2.0/dev build main.jsx",
+    "build": "deno run -A build.jsx",
     "check": "deno fmt --check . && deno lint . && deno check",
     "dev": "deno serve -A --watch main.jsx",
     "start": "deno serve -A _fresh/server.js",

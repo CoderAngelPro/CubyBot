@@ -24,6 +24,8 @@ jobs:
         run: deno cache main.jsx
       - name: Build Fresh app
         run: deno task build
+      - name: Verify Fresh entrypoint
+        run: test -f _fresh/server.js
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
